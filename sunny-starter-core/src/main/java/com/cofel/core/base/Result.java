@@ -38,5 +38,54 @@ public class Result implements Serializable {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private Object data;
 
+    public Result(){}
 
+    public Result(boolean success) {
+        this.success = success;
+    }
+
+    public Result(boolean success, Integer status) {
+        this.success = success;
+        this.status = status;
+    }
+
+    public Result(boolean success, String code, String msg) {
+        this.success = success;
+        this.code = code;
+        this.msg = msg;
+    }
+
+    public Result(boolean success, Integer status, String code, String msg) {
+        this.success = success;
+        this.status = status;
+        this.code = code;
+        this.msg = msg;
+    }
+
+    public Result(boolean success, String code, String msg, Object data) {
+        this.success = success;
+        this.code = code;
+        this.msg = msg;
+        this.data = data;
+    }
+
+    public void setSuccess(boolean success) {
+        this.success = success;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public void setData(Object data) {
+        this.data = data;
+    }
 }
