@@ -17,7 +17,7 @@ public class Dates {
      * 周四下午拍照
      * 周五出去写真
      */
-    public interface Pattern{
+    public interface Pattern {
         //--------------------------------
         //常规模式
         //--------------------------------
@@ -91,39 +91,42 @@ public class Dates {
 
     /**
      * 格式化日期时间
+     *
      * @param date 日期时间
      * @return yyyy-MM-dd HH:mm:ss
      */
-    public static String fromat(Date date){
-        return format(date,DEFAULT_PATTERN);
+    public static String fromat(Date date) {
+        return format(date, DEFAULT_PATTERN);
     }
 
     /**
      * 格式化日期
-     * @param date 日期
+     *
+     * @param date    日期
      * @param pattern 匹配模式
      * @return 格式化后的字符串
      */
-    public static String format(Date date,String pattern){
-        if(date == null){
+    public static String format(Date date, String pattern) {
+        if (date == null) {
             return null;
         }
-        pattern = StringUtils.isNotBlank(pattern)?pattern:DEFAULT_PATTERN;
+        pattern = StringUtils.isNotBlank(pattern) ? pattern : DEFAULT_PATTERN;
         SimpleDateFormat sdf = new SimpleDateFormat(pattern);
         return sdf.format(date);
     }
 
     /**
      * 解析日期
+     *
      * @param date 日期
      * @return 解析后的日期
      */
-    public static Date parseDate(String date){
-        if(StringUtils.isBlank(date)){
+    public static Date parseDate(String date) {
+        if (StringUtils.isBlank(date)) {
             return null;
         }
         try {
-            DateUtils.parseDate(date,PARSE_PATTERN);
+            DateUtils.parseDate(date, PARSE_PATTERN);
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -132,19 +135,20 @@ public class Dates {
 
     /**
      * 方法重载，匹配格式格式化日期，字符串转换日期
-     * @param date 日期
+     *
+     * @param date    日期
      * @param pattern 匹配模式
      * @return 解析后的日期
      */
-    public static Date parseDate(String date,String pattern){
-        if(StringUtils.isBlank(date)){
+    public static Date parseDate(String date, String pattern) {
+        if (StringUtils.isBlank(date)) {
             return null;
         }
         String[] parsePatterns;
-        parsePatterns = StringUtils.isNotBlank(pattern)?new String[]{pattern}:PARSE_PATTERN;
-        try{
-            return DateUtils.parseDate(date,pattern);
-        } catch (ParseException e){
+        parsePatterns = StringUtils.isNotBlank(pattern) ? new String[]{pattern} : PARSE_PATTERN;
+        try {
+            return DateUtils.parseDate(date, pattern);
+        } catch (ParseException e) {
             e.printStackTrace();
         }
         return null;

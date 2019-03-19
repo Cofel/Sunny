@@ -8,44 +8,43 @@ import java.util.Map;
 /**
  * 基础枚举值
  */
-public enum BaseEnums implements BaseEnum<String,String> {
+public enum BaseEnums implements BaseEnum<String, String> {
 
-    SUCCESS("request.success","请求成功") ,
+    SUCCESS("request.success", "请求成功"),
 
-    FAILURE("request.failure","请求失败"),
+    FAILURE("request.failure", "请求失败"),
 
-    OPERATION_SUCCESS("operation.success","操作成功"),
+    OPERATION_SUCCESS("operation.success", "操作成功"),
 
-    OPERATION_FAILURE("operation.failure","操作失败"),
+    OPERATION_FAILURE("operation.failure", "操作失败"),
 
-    ERROR("system.error","系统异常"),
+    ERROR("system.error", "系统异常"),
 
-    NOT_FOUND("not_found","请求资源不存在"),
+    NOT_FOUND("not_found", "请求资源不存在"),
 
-    FORBIDDEN("forbidden","无权限访问"),
+    FORBIDDEN("forbidden", "无权限访问"),
 
-    VERSION_NOT_MATCH("record_not_exists_or_version_not_match","记录版本不存在或不匹配"),
+    VERSION_NOT_MATCH("record_not_exists_or_version_not_match", "记录版本不存在或不匹配"),
 
-    PERAMETER_NOT_NULL("perameter_not_be_null","参数不能为空");
+    PERAMETER_NOT_NULL("perameter_not_be_null", "参数不能为空");
 
 
     private String code;
 
     private String desc;
 
-    private static Map<String,String> allmap = new HashMap<>();
+    private static Map<String, String> allmap = new HashMap<>();
 
-    BaseEnums(String code,String desc){
+    BaseEnums(String code, String desc) {
         this.code = code;
         this.desc = desc;
     }
 
     static {
-        for (BaseEnums enums : BaseEnums.values()){
-            allmap.put(enums.code,enums.desc);
+        for (BaseEnums enums : BaseEnums.values()) {
+            allmap.put(enums.code, enums.desc);
         }
     }
-
 
 
     @Override

@@ -1,6 +1,7 @@
 package com.cofel.core.base;
 
 import java.io.Serializable;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 /**
@@ -38,7 +39,8 @@ public class Result implements Serializable {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private Object data;
 
-    public Result(){}
+    public Result() {
+    }
 
     public Result(boolean success) {
         this.success = success;
@@ -69,20 +71,40 @@ public class Result implements Serializable {
         this.data = data;
     }
 
+    public boolean isSuccess() {
+        return success;
+    }
+
     public void setSuccess(boolean success) {
         this.success = success;
+    }
+
+    public Integer getStatus() {
+        return status;
     }
 
     public void setStatus(Integer status) {
         this.status = status;
     }
 
+    public String getCode() {
+        return code;
+    }
+
     public void setCode(String code) {
         this.code = code;
     }
 
+    public String getMsg() {
+        return msg;
+    }
+
     public void setMsg(String msg) {
         this.msg = msg;
+    }
+
+    public Object getData() {
+        return data;
     }
 
     public void setData(Object data) {

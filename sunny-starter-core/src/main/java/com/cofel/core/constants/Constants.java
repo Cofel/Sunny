@@ -22,7 +22,7 @@ public class Constants {
     /**
      * 表示：是/否、启用/禁用等
      */
-    public interface Flag{
+    public interface Flag {
         Integer YES = 1;
         Integer NO = 0;
     }
@@ -30,7 +30,7 @@ public class Constants {
     /**
      * 操作类型：添加、更新、删除
      */
-    public interface operation{
+    public interface operation {
 
         /**
          * 添加
@@ -49,7 +49,7 @@ public class Constants {
     /**
      * 性别
      */
-    public interface sex{
+    public interface Sex {
         /**
          * 男
          */
